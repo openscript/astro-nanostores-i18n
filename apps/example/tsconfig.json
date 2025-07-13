@@ -1,23 +1,11 @@
 {
-  "extends": [
-    "../../tsconfig.base.json",
-    "astro/tsconfigs/strict"
-  ],
-  "include": [
-    ".astro/types.d.ts",
-    "**/*",
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "extends": ["../../tsconfig.base.json", "astro/tsconfigs/strict"],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
-    "types": [
-      "astro/client",
-    ],
+    "types": ["astro/client"],
     "paths": {
-      "astro-loader-i18n": [
-        "../../libs/astro-loader-i18n/src"
-      ],
+      "astro-loader-i18n": ["../../libs/astro-loader-i18n/src"]
     }
   }
 }

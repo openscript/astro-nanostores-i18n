@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "pnpm exec nx run-many --nx-bail --target=dev --parallel 10 --output-style stream",
     "build": "pnpm exec nx run-many --nx-bail --target=build --parallel 10 --output-style stream",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "biome ci",
     "test": "pnpm exec nx run-many --nx-bail --target=test --parallel 10 --output-style stream",
     "type-check": "tsc --noEmit",
     "prepublish": "pnpm exec nx run-many --target=prepare --parallel",
@@ -18,6 +18,7 @@
     "tag": "changeset tag"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.1.1",
     "@changesets/cli": "^2.29.5",
     "@eslint/js": "^9.31.0",
     "@nx/eslint": "21.2.3",

@@ -24,21 +24,27 @@
       "types": "./dist/astro-nanostores-i18n.d.ts"
     }
   },
+  "bin": {
+    "i18n:extract": "./dist/extract-messages.js"
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
   "peerDependencies": {
+    "@nanostores/i18n": "^1.0.1",
     "astro": "^5.5.0"
   },
   "devDependencies": {
+    "@astrojs/compiler": "^2.12.2",
     "@codecov/vite-plugin": "^1.9.1",
     "@eslint/js": "^9.31.0",
     "@types/node": "^24.0.13",
     "@vitest/coverage-v8": "^3.2.4",
     "astro": "^5.11.0",
     "eslint": "^9.31.0",
+    "fast-glob": "^3.3.3",
     "globals": "^16.3.0",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",

@@ -9,12 +9,12 @@
         "dbaeumer.vscode-eslint",
         "redhat.vscode-yaml",
         "vitest.explorer",
-        "unifiedjs.vscode-mdx"
+        "unifiedjs.vscode-mdx",
+        "biomejs.biome",
+        "nrwl.angular-console"
       ]
     }
   },
   "postCreateCommand": "npm install -g pnpm@10.13.1",
-  "forwardPorts": [
-    4321
-  ]
+  "forwardPorts": [4321]
 }
