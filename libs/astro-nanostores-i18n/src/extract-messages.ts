@@ -67,7 +67,7 @@ await Promise.all(
             const code = ts.transpile(extractedMessages);
             runInContext(code, context);
           }
-        } catch (error: any) {
+        } catch (error: unknown) {
           console.error(`Error processing file ${file}:`, error);
         }
       }
