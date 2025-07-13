@@ -1,0 +1,20 @@
+{
+  "name": "astro-nanostores-i18n",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:2-22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "redhat.vscode-yaml",
+        "vitest.explorer",
+        "unifiedjs.vscode-mdx"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install -g pnpm@10.13.1",
+  "forwardPorts": [
+    4321
+  ]
+}
