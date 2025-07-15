@@ -1,5 +1,12 @@
 ---
+import { params } from "@nanostores/i18n";
+import { i18n } from "astro-nanostores-i18n";
 import Page from "../layouts/Page.astro";
+
+export const messages = i18n("index", {
+  title: "Post details",
+  example: params("Test {asdas}"),
+});
 ---
 
 <Page>

@@ -18,21 +18,26 @@ export default defineConfig({
     }),
   ],
   build: {
+    target: "es2022",
     sourcemap: true,
     emptyOutDir: true,
     lib: {
-      entry: "src/astro-nanostores-i18n.ts",
-      name: "astro-nanostores-i18n",
+      entry: ["src/astro-nanostores-i18n.ts", "src/extract-messages.ts"],
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["astro/loaders", "astro/zod", "limax"],
+      external: [
+        "node:fs/promises",
+        "node:vm",
+        "node:util",
+        "@astrojs/compiler",
+        "@astrojs/compiler/utils",
+        "@nanostores/i18n",
+        "fast-glob",
+        "typescript",
+      ],
       output: {
-        globals: {
-          "astro/loaders": "astroLoaders",
-          "astro/zod": "astroZod",
-          limax: "limax",
-        },
+        globals: {},
       },
     },
   },

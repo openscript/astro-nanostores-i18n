@@ -55,5 +55,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "nanostores": "^1.0.1"
   }
 }

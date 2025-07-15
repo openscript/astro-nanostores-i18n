@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from "node:fs/promises";
+import { parseArgs } from "node:util";
 import { createContext, runInContext } from "node:vm";
 import { parse } from "@astrojs/compiler";
 import { is, walk } from "@astrojs/compiler/utils";
@@ -8,7 +9,37 @@ import type { Messages } from "@nanostores/i18n";
 import { glob } from "fast-glob";
 import * as ts from "typescript";
 
-const components = await glob("./src/**/*.astro", { absolute: true });
+const { values } = parseArgs({
+  args: process.argv.slice(2),
+  options: {
+    glob: {
+      type: "string",
+      default: "./src/**/*.astro",
+    },
+    out: {
+      type: "string",
+      default: "./src/translations/extract.json",
+    },
+    help: {
+      type: "boolean",
+      short: "h",
+    },
+  },
+});
+
+if (values.help) {
+  console.log(`
+Usage: extract-messages [options]
+
+Options:
+  --glob <pattern>    Glob pattern for finding Astro files (default: "./src/**/*.astro")
+  --out <path>        Output path for messages file (default: "./src/translations/extract.json")
+  --help, -h          Show this help message
+  `);
+  process.exit(0);
+}
+
+const components = await glob(values.glob, { absolute: true });
 const allMessages: Record<string, Messages> = {};
 const context = createContext({
   exports: {},
@@ -83,7 +114,7 @@ if (Object.keys(allMessages).length > 0) {
     ]),
   );
 
-  await writeFile("./src/messages.json", JSON.stringify(messagesJSON, null, 2));
+  await writeFile(values.out, JSON.stringify(messagesJSON, null, 2));
   process.exit(0);
 } else {
   console.warn("No messages found in the provided components.");

@@ -2,7 +2,11 @@
   "name": "example",
   "type": "module",
   "private": true,
+  "scripts": {
+    "i18n:extract": "i18n:extract"
+  },
   "dependencies": {
+    "@nanostores/i18n": "^1.0.1",
     "astro": "^5.11.0",
     "astro-nanostores-i18n": "workspace:*",
     "limax": "^4.1.0"

@@ -68,6 +68,9 @@ importers:
 
   apps/example:
     dependencies:
+      '@nanostores/i18n':
+        specifier: ^1.0.1
+        version: 1.0.1(nanostores@1.0.1)
       astro:
         specifier: ^5.11.0
         version: 5.11.0(@types/node@24.0.13)(jiti@2.4.2)(rollup@4.45.0)(typescript@5.8.3)(yaml@2.8.0)
@@ -83,6 +86,12 @@ importers:
       '@nanostores/i18n':
         specifier: ^1.0.1
         version: 1.0.1(nanostores@1.0.1)
+      '@nanostores/persistent':
+        specifier: ^1.1.0
+        version: 1.1.0(nanostores@1.0.1)
+      nanostores:
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@astrojs/compiler':
         specifier: ^2.12.2
@@ -1208,6 +1217,12 @@ packages:
 
   '@nanostores/i18n@1.0.1':
     resolution: {integrity: sha512-0GraBfB6DCMAkPiQvdQqQh4T3UfFRANMrX6+5cR2iYBqGHVMMova6C/Y0A10pxQs6ltHnoLU08GSW9DClUD7jw==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
+
+  '@nanostores/persistent@1.1.0':
+    resolution: {integrity: sha512-e6vfv7H99VkCfSoNTR/qNVMj6vXwWcsEL+LCQQamej5GK9iDefKxPCJjdOpBi1p4lNCFIQ+9VjYF1spvvc2p6A==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
@@ -5556,6 +5571,10 @@ snapshots:
   '@microsoft/tsdoc@0.15.1': {}
 
   '@nanostores/i18n@1.0.1(nanostores@1.0.1)':
+    dependencies:
+      nanostores: 1.0.1
+
+  '@nanostores/persistent@1.1.0(nanostores@1.0.1)':
     dependencies:
       nanostores: 1.0.1
 
